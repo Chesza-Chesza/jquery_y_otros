@@ -25,7 +25,11 @@ jQuery(function() {
 console.log($(document.body))
 
 $(document).on('turbolinks:load', function() { //todas las acciones que modifiquen el Dom deben estar incluidas en esta function
-    $('body').css('background', 'tomato')
+    //$('body').css('background', 'tomato')
+    //$('body').css('color', 'white')
+    $('body').css({ background: 'tomato', color: 'white' })
+    const colors = ['tomato', 'navy', 'mediumseagreen', 'orange', 'skyblue', 'chucknorris']
+
     $('.alert').click(function() {
             alert('ALERTA, me han hecho click!')
         })
@@ -48,9 +52,18 @@ $(document).on('turbolinks:load', function() { //todas las acciones que modifiqu
         }
     })
     $('.hide').click(function() {
-        $('.text').hide('slow')
+        $('.text').hide('slow', function() {
+            $('body').css('background', 'navy')
+        })
     })
     $('.show').click(function() {
-        $('.text').show(1000)
+        $('.text').show(5000, function() {
+            $('body').css('background', 'tomato')
+        })
+    })
+    $('.toggle').click(function() {
+        $('.text').toggle(500, function() {
+            $('body').css('background', colors[Math.floor(Math.random() * colors.length)])
+        })
     })
 })
