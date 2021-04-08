@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'index', root_path %>
+      <%= link_to 'contacto', home_contact_path %>
+      <%= link_to 'products', home_products_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -17,9 +17,40 @@ Turbolinks.start()
 ActiveStorage.start()
 
 jQuery(function() {
-    console.log('============================Ya está instalado jQuery, y funciona!===============================')
+    console.log('==============Ya está instalado jQuery, y funciona!==============')
     console.log(jQuery)
     console.log($)
 })
 
-$()
+console.log($(document.body))
+
+$(document).on('turbolinks:load', function() { //todas las acciones que modifiquen el Dom deben estar incluidas en esta function
+    $('body').css('background', 'tomato')
+    $('.alert').click(function() {
+            alert('ALERTA, me han hecho click!')
+        })
+        //document.querySelector('.title') //Selecciona al 1ero que encuentre
+    $('select').change(function() {
+        $('.result').text($(this).val())
+    })
+    $('h1').hover(function() {
+        console.log('me rosaste, me siento ofendido')
+    })
+    $('input.nombre').focus(function() {
+        console.log('recuerde escribir su nombre, NO el apellido!')
+    })
+    $('input.nombre').blur(function() {
+        const txt = $(this).val()
+        if (txt) {
+            console.log('Bien, escribiste tu nombre!')
+        } else {
+            console.log('Ya pues, y el nombre?')
+        }
+    })
+    $('.hide').click(function() {
+        $('.text').hide('slow')
+    })
+    $('.show').click(function() {
+        $('.text').show(1000)
+    })
+})
