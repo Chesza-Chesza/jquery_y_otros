@@ -16,6 +16,10 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import Chartkick from 'chartkick'
+import Highcharts from 'highcharts'
+window.Highcharts = Highcharts
+
 // jQuery(function() {
 //     console.log('Ya esta instalado jQuery, y funciona!!')
 //     console.log(jQuery)
