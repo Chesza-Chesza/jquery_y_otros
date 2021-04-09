@@ -1,0 +1,19 @@
+/Obtención del nodo document
+
+$(document) 
+//jQuerydocument//VanillaJavascript
+
+//Obtención de todos los nodos con la clase 'btn'
+
+$('.btn') //jQuery
+document.querySelectorAll('.btn') //Vanilla Javascript
+
+//Obtención del nodo con identificador 'id' 
+
+$('#id') //jQuery
+document.querySelector('#id') //VanillaJavascript
+
+//Obtención de todos los nodos del tipo<li>
+
+$('li') //jQuery
+document.querySelectorAll('li') //VanillaJavascript

@@ -66,4 +66,12 @@ $(document).on('turbolinks:load', function() { //todas las acciones que modifiqu
             $('body').css('background', colors[Math.floor(Math.random() * colors.length)])
         })
     })
+
+    $('.fadeout').on('click hover', function() {
+        $('.himage').fadeOut()
+    })
+
+    $('.fadein').on('click hover', function() {
+        $('.himage').fadeIn()
+    })
 })
